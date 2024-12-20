@@ -11,24 +11,60 @@
         <h1>Paipra Jobs</h1>
     </header>
 
+    <div class="banner">
+        <img src="imagemain.jpg" alt="Paipra Jobs Banner">
+        <div class="banner-overlay">
+            <h2>Find A Job in Paipra</h2>
+            <p>Connect with the best opportunities in your area</p>
+        </div>
+    </div>
+
     <main>
         <section id="post-job">
             <h2>Post a Job</h2>
-            <iframe src="https://forms.gle/fVeAmm4FcoLD2B12A" width="640" height="480" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+            <iframe src="https://forms.gle/fVeAmm4FcoLD2B12A" loading="lazy">Loading…</iframe>
         </section>
 
         <section id="job-openings">
             <h2>Current Job Openings</h2>
-            <ul id="job-list">
-                <!-- Job postings will be displayed here -->
-                
-            </ul>
+            <div id="job-list">
+                <div class="job-card">
+                    <h3 class="job-title">Senior Web Developer</h3>
+                    <div class="job-details">
+                        <span>📅 Posted: Dec 19, 2024</span>
+                        <span>💼 Full-time</span>
+                        <span>📍 Paipra</span>
+                    </div>
+                    <p>We are seeking an experienced web developer to join our growing team. Must have strong skills in HTML, CSS, and JavaScript.</p>
+                    <button class="apply-btn">Apply Now</button>
+                </div>
+
+                <div class="job-card">
+                    <h3 class="job-title">Marketing Manager</h3>
+                    <div class="job-details">
+                        <span>📅 Posted: Dec 20, 2024</span>
+                        <span>💼 Full-time</span>
+                        <span>📍 Paipra</span>
+                    </div>
+                    <p>Looking for a creative marketing manager with experience in digital marketing and campaign management.</p>
+                    <button class="apply-btn">Apply Now</button>
+                </div>
+            </div>
         </section>
     </main>
 
     <footer>
         <p>&copy; 2024 Paipra Jobs. All rights reserved.</p>
     </footer>
+
+    <script>
+        document.querySelectorAll('.apply-btn').forEach(button => {
+            button.addEventListener('click', function() {
+                const jobTitle = this.closest('.job-card').querySelector('.job-title').textContent;
+                alert(`Applying for: ${jobTitle}`);
+                // Here you can add your application handling logic
+            });
+        });
+    </script>
 </body>
 </html>
-
