@@ -1,20 +1,35 @@
+/* Base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
+    line-height: 1.6;
 }
 
+/* Header */
 header {
     background-color: #4CAF50;
     color: white;
-    padding: 10px 20px;
+    padding: 15px;
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    position: sticky;
+    top: 0;
+    z-index: 100;
 }
 
 header h1 {
     margin: 0;
+    font-size: 1.8rem;
+    text-align: center;
 }
 
+/* Banner */
 .banner {
     width: 100%;
     height: 300px;
@@ -46,17 +61,18 @@ header h1 {
 }
 
 .banner-overlay h2 {
-    font-size: 2.5em;
+    font-size: 2.2em;
     margin: 0 0 10px 0;
     text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
 }
 
 .banner-overlay p {
-    font-size: 1.2em;
+    font-size: 1.1em;
     margin: 0;
     text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
 }
 
+/* Main content */
 main {
     padding: 20px;
     max-width: 1200px;
@@ -71,24 +87,14 @@ section {
     box-shadow: 0 2px 4px rgba(0,0,0,0.05);
 }
 
-form {
-    margin-top: 10px;
-}
-
-footer {
-    text-align: center;
-    padding: 10px;
-    background-color: #4CAF50;
-    color: white;
-    margin-top: 40px;
-}
-
+/* Job Cards */
 .job-card {
     border: 1px solid #e0e0e0;
-    border-radius: 4px;
+    border-radius: 8px;
     padding: 15px;
     margin-bottom: 15px;
     transition: transform 0.2s;
+    background: white;
 }
 
 .job-card:hover {
@@ -104,6 +110,7 @@ footer {
 
 .job-details {
     display: flex;
+    flex-wrap: wrap;
     gap: 15px;
     margin-bottom: 10px;
     color: #666;
@@ -114,16 +121,79 @@ footer {
     background-color: #4CAF50;
     color: white;
     border: none;
-    padding: 8px 16px;
+    padding: 10px 20px;
     border-radius: 4px;
     cursor: pointer;
     transition: background-color 0.2s;
+    width: 100%;
+    font-size: 1rem;
+    margin-top: 10px;
 }
 
 .apply-btn:hover {
     background-color: #45a049;
 }
 
+/* Modal */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+}
+
+.modal.show {
+    display: flex;
+}
+
+.modal-content {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    width: 90%;
+    max-width: 400px;
+    position: relative;
+}
+
+.close-button {
+    position: absolute;
+    right: 15px;
+    top: 15px;
+    cursor: pointer;
+    font-size: 24px;
+    color: #666;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+}
+
+.close-button:hover {
+    background-color: #f5f5f5;
+}
+
+.contact-info {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.phone-number {
+    font-size: 1.5em;
+    margin-top: 15px;
+    color: #4CAF50;
+    font-weight: bold;
+}
+
+/* Form and iframe */
 iframe {
     width: 100%;
     max-width: 640px;
@@ -131,27 +201,116 @@ iframe {
     border: none;
     margin: 0 auto;
     display: block;
+    border-radius: 8px;
 }
 
-@media (max-width: 768px) {
-    .job-details {
-        flex-direction: column;
-        gap: 5px;
-    }
-    
-    main {
-        padding: 10px;
+/* Footer */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #4CAF50;
+    color: white;
+    margin-top: 40px;
+}
+
+/* Mobile Responsive Design */
+@media screen and (max-width: 768px) {
+    /* Header */
+    header h1 {
+        font-size: 1.5rem;
     }
 
+    /* Banner */
     .banner {
         height: 200px;
     }
 
     .banner-overlay h2 {
-        font-size: 1.8em;
+        font-size: 1.5em;
     }
 
     .banner-overlay p {
         font-size: 1em;
+    }
+
+    /* Main content */
+    main {
+        padding: 10px;
+    }
+
+    section {
+        padding: 15px;
+        margin-bottom: 20px;
+    }
+
+    /* Job Cards */
+    .job-card {
+        padding: 12px;
+    }
+
+    .job-details {
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .job-title {
+        font-size: 1.1em;
+    }
+
+    /* Modal */
+    .modal-content {
+        padding: 15px;
+        width: 95%;
+    }
+
+    .phone-number {
+        font-size: 1.3em;
+    }
+
+    /* Form */
+    iframe {
+        height: 400px;
+    }
+}
+
+/* Small screens */
+@media screen and (max-width: 480px) {
+    header h1 {
+        font-size: 1.3rem;
+    }
+
+    .banner {
+        height: 150px;
+    }
+
+    .banner-overlay h2 {
+        font-size: 1.2em;
+    }
+
+    section {
+        padding: 12px;
+    }
+
+    .apply-btn {
+        padding: 8px 16px;
+    }
+
+    iframe {
+        height: 350px;
+    }
+}
+
+/* Touch device optimizations */
+@media (hover: none) {
+    .job-card:hover {
+        transform: none;
+    }
+
+    .apply-btn {
+        padding: 12px 20px; /* Larger touch target */
+    }
+
+    .close-button {
+        padding: 10px; /* Larger touch target */
     }
 }
