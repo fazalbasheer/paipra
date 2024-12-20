@@ -8,14 +8,67 @@ header {
     background-color: #4CAF50;
     color: white;
     padding: 10px 20px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+header h1 {
+    margin: 0;
+}
+
+.banner {
+    width: 100%;
+    height: 300px;
+    position: relative;
+    overflow: hidden;
+}
+
+.banner img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.banner-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.4);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+.banner-overlay h2 {
+    font-size: 2.5em;
+    margin: 0 0 10px 0;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+
+.banner-overlay p {
+    font-size: 1.2em;
+    margin: 0;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
 }
 
 main {
     padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 section {
     margin-bottom: 30px;
+    background: white;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
 }
 
 form {
@@ -25,4 +78,80 @@ form {
 footer {
     text-align: center;
     padding: 10px;
+    background-color: #4CAF50;
+    color: white;
+    margin-top: 40px;
+}
+
+.job-card {
+    border: 1px solid #e0e0e0;
+    border-radius: 4px;
+    padding: 15px;
+    margin-bottom: 15px;
+    transition: transform 0.2s;
+}
+
+.job-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.job-title {
+    color: #4CAF50;
+    margin: 0 0 10px 0;
+    font-size: 1.2em;
+}
+
+.job-details {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 10px;
+    color: #666;
+    font-size: 0.9em;
+}
+
+.apply-btn {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.apply-btn:hover {
+    background-color: #45a049;
+}
+
+iframe {
+    width: 100%;
+    max-width: 640px;
+    height: 480px;
+    border: none;
+    margin: 0 auto;
+    display: block;
+}
+
+@media (max-width: 768px) {
+    .job-details {
+        flex-direction: column;
+        gap: 5px;
+    }
+    
+    main {
+        padding: 10px;
+    }
+
+    .banner {
+        height: 200px;
+    }
+
+    .banner-overlay h2 {
+        font-size: 1.8em;
+    }
+
+    .banner-overlay p {
+        font-size: 1em;
+    }
 }
